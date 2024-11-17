@@ -36,18 +36,19 @@ export function DocumentUpload({ open, onOpenChange }: DocumentUploadProps) {
       await new Promise((resolve) => setTimeout(resolve, 200));
     }
     setUploading(false);
-    onOpenChange(false);
     setFiles([]);
     setProgress(0);
+    onOpenChange(false);
+    alert("This is a demo version. In the full version, documents would be processed and indexed for AI assistance.");
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Upload Documents</DialogTitle>
+          <DialogTitle>Upload Documents (Demo)</DialogTitle>
           <DialogDescription>
-            Upload PDF documents to enhance Eva's knowledge base.
+            Select PDF documents to simulate the upload process.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
@@ -61,7 +62,7 @@ export function DocumentUpload({ open, onOpenChange }: DocumentUploadProps) {
                 <p className="mb-2 text-sm text-muted-foreground">
                   <span className="font-semibold">Click to upload</span> or drag and drop
                 </p>
-                <p className="text-xs text-muted-foreground">PDF (MAX. 10MB)</p>
+                <p className="text-xs text-muted-foreground">PDF (Demo Only)</p>
               </div>
               <input
                 id="dropzone-file"
@@ -100,7 +101,7 @@ export function DocumentUpload({ open, onOpenChange }: DocumentUploadProps) {
             <div className="space-y-2">
               <Progress value={progress} />
               <p className="text-sm text-center text-muted-foreground">
-                Processing documents... {progress}%
+                Simulating upload... {progress}%
               </p>
             </div>
           )}

@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Eva - AI Assistant',
-  description: 'Your intelligent document assistant powered by RAG',
+  title: 'Eva - AI Assistant Demo',
+  description: 'Static demo of Eva AI Assistant',
 };
 
 export default function RootLayout({
@@ -17,12 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          storageKey="eva-theme"
         >
           {children}
         </ThemeProvider>
